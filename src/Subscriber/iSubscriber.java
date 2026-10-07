@@ -1,5 +1,7 @@
 package Subscriber;
+import Model.Message;
 
-public class iSubscriber {
-    
+public interface ISubscriber {
+    String getId();
+    void onMessage(Message message) throws InterruptedException;
 }

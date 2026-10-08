@@ -58,6 +58,8 @@ public class Main {
 
 /*
 
+pictorial representation of the flow of messages between publishers, topics, and subscribers:
+
 (m = message
 P = Publisher
 T = Topic
@@ -68,7 +70,7 @@ S = Subscriber
 
 (m3P2, m4P2)    T2 -------> S1
                     -----> S3)
-                    
+
 */
 
 

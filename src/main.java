@@ -17,16 +17,16 @@ public class Main {
         Subscriber subscriber2 = new Subscriber("Subscriber2");
         Subscriber subscriber3 = new Subscriber("Subscriber3");
 
+        // Create publishers.
+        Publisher publisher1 = new Publisher("Publisher1", kafkaController);
+        Publisher publisher2 = new Publisher("Publisher2", kafkaController);
+
         // Subscribe: subscriber1 subscribes to both topics,
         // subscriber2 subscribes to topic1, and subscriber3 subscribes to topic2.
         kafkaController.subscribe(subscriber1, topic1.getTopicId());
         kafkaController.subscribe(subscriber1, topic2.getTopicId());
         kafkaController.subscribe(subscriber2, topic1.getTopicId());
         kafkaController.subscribe(subscriber3, topic2.getTopicId());
-
-        // Create publishers.
-        Publisher publisher1 = new Publisher("Publisher1", kafkaController);
-        Publisher publisher2 = new Publisher("Publisher2", kafkaController);
 
         // Publish some messages.
         publisher1.publish(topic1.getTopicId(), new Message("Message m1"));
